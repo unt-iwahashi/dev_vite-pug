@@ -1,0 +1,54 @@
+@use "sass:map";
+@use "sass:math";
+@import "../setting/breakpoint.scss";
+
+@function breakpoint-min($name) {
+  $min: map.get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+// vwの指定
+// 1. $viewportにはPSD（スマホ）のカンバスサイズを指定
+// 2. スマホサイトのデザインが750pxの場合は `$viewport:750` と指定
+// 3. PSDと同じ値を `$size` に入力。※二分の一は不要。
+// @example
+// .xxxx {
+//  font-size: vw(24);
+//  margin: vw(50) auto vw(20) ;
+// }
+@function vw($size, $viewport: 375) {
+  $rate: math.div(100, $viewport);
+  @return $rate * $size * 1vw;
+}
+
+// remの指定
+// @example
+// .xxxx {
+//  font-size: rem(24);
+//  margin: rem(50) auto rem(20) ;
+// }
+@function rem($size) {
+  @return math.div($size, 16) * 1rem;
+}
+
+// letter-spacingの指定
+// @example
+// .xxxx {
+//  letter-spacing: ls(100);
+// }
+@function ls($value: 100, $size: 16) {
+  $tracking: math.div($value, $size);
+  @return $tracking * 1em;
+}
+
+// line-heightの指定
+// 1. $fontsizeには「フォントサイズを設定」の値を指定。（pxは省略）
+// 2. $lineFeedにはPSDの「行送りを設定」の値を指定（pxは省略）
+// @example
+// .xxxx {
+//  line-height: lh(13, 22);
+// }
+@function lh($fontsize: 16, $lineFeed: 24) {
+  $lineheight: math.div($lineFeed, $fontsize);
+  @return $lineheight;
+}

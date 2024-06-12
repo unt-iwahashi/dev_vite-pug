@@ -1,0 +1,13 @@
+:root {
+  --typo-font-base: "Noto Sans JP", sans-serif;
+  --typo-font-en: "Roboto", sans-serif;
+  --typo-size-base: 1rem;
+
+  @media (width <= 375px) {
+    --typo-size-base: min(4.2667vw, 1rem);
+  }
+
+  --typo-weight-regular: 400;
+  --typo-weight-medium: 500;
+  --typo-weight-bold: 700;
+}

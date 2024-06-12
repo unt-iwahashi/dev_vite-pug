@@ -1,0 +1,24 @@
+@import "./function.scss";
+// -----------------------------
+//  @mixin
+//------------------------------
+// media query
+@mixin breakpoint-up($name) {
+  $min: breakpoint-min($name);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// hover
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}

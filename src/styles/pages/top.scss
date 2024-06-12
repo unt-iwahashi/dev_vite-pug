@@ -1,0 +1,6 @@
+.top {
+  color: blue;
+  @include breakpoint-up(md) {
+    color: red;
+  }
+}

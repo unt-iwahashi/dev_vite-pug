@@ -1,0 +1,24 @@
+-
+  const name = pageName ? `${pageName}｜${siteName}` : siteName;
+  const url = pageId ? `${siteUrl}${pageId}` : siteUrl;
+  const ogImg = siteUrl + 'ogp.png';
+  const twitterImg = siteUrl + 'twitter_card.png';
+head
+  include /components/gtm_head.pug
+  meta(charset="UTF-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  meta(name="description", content=description)
+  meta(property="og:type" content="website")
+  meta(property="og:url" content=url)
+  meta(property="og:site_name" content=name)
+  meta(property="og:image" content=ogImg)
+  meta(property="og:local" content="ja_JP")
+  meta(name="twitter:card" content="summary_large_image")
+  meta(name="twitter:title" content=name)
+  meta(name="twitter:description" content=description)
+  meta(name="twitter:url" content=url)
+  meta(name="twitter:image" content=twitterImg)
+  link(rel="icon" href="/favicon.ico")
+  link(rel="stylesheet", href="/src/styles/styles.scss")
+  script(type="module", src="/src/scripts/main.ts") 
+  title=name

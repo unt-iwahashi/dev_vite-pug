@@ -1,0 +1,32 @@
+{
+  "name": "tc_forum_2024",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "rimraf ./build && tsc && vite build && prettier --write 'build/**/*.html'",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
+    "@vituum/vite-plugin-pug": "^1.1.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.2",
+    "rimraf": "^5.0.7",
+    "sass": "^1.77.5",
+    "stylelint": "^16.6.1",
+    "stylelint-config-recess-order": "^5.0.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vituum": "^1.1.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "Safari >= 16",
+    "iOS >= 16.7",
+    "not dead"
+  ]
+}
